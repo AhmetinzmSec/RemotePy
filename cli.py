@@ -1,10 +1,10 @@
 import argparse
 from app import app
-from wsgi import RemotePyServer
+from wsgi import Atatürk MTALServer
 
 
 def main():
-	parser = argparse.ArgumentParser(description = "RemotePy CLI")
+	parser = argparse.ArgumentParser(description = "Atatürk MTAL CLI")
 
 	parser.add_argument("-b", "--server", type = str, nargs=1,
 						metavar = "server", default = "0.0.0.0",
@@ -29,7 +29,7 @@ def main():
 	workers = args.workers
 	threads = args.threads
 
-	server = RemotePyServer()
+	server = Atatürk MTALServer()
 	server.run(app, host=host, port=port, workers=workers, threads=threads)
 
 if __name__ == "__main__":

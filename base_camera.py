@@ -62,7 +62,7 @@ class BaseCamera(object):
         if BaseCamera.thread is None:
             BaseCamera.last_access = time.time()
 
-            # start background frame thread
+            # start
             BaseCamera.thread = threading.Thread(target=self._thread)
             BaseCamera.thread.start()
 
@@ -74,7 +74,7 @@ class BaseCamera(object):
         """Return the current camera frame."""
         BaseCamera.last_access = time.time()
 
-        # wait for a signal from the camera thread
+        # wait for a signal from the camera
         BaseCamera.event.wait()
         BaseCamera.event.clear()
 
